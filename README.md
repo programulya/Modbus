@@ -1,3 +1,13 @@
 #Modbus
 
-Usage of NModbus library for exchange data (read/write) by Modbus RTU protocol.
+Exchange data (read/write) via Modbus RTU protocol.
+
+Technologies and libs:
+<ul>
+    <li>
+        .NET 4.5.1;
+    </li>
+    <li>
+        NModbus.dll.
+    </li>
+</ul>
