@@ -12,7 +12,7 @@ namespace Modbus
         private static readonly int WriteTimeout = Convert.ToInt32(ConfigurationSettings.AppSettings["WriteTimeout"]);
         private static readonly int AttemptsModbus = Convert.ToInt32(ConfigurationSettings.AppSettings["AttemptsModbus"]);
 
-        // Counters of errors (should be displayed on main window of program)
+        // Counters of errors
         public static int ReadErrors { get; private set; }
         public static int WriteErrors { get; private set; }
 
@@ -39,7 +39,7 @@ namespace Modbus
         /// </summary>
         /// <param name="port">Serial port.</param>
         /// <param name="slaveAddress">Slave device address.</param>
-        /// <param name="startAddress">Start adress for reading.</param>
+        /// <param name="startAddress">Start address for reading.</param>
         /// <param name="numRegisters">Counter of registers that should be read.</param>
         /// <returns>Values of registers.</returns>
         public static ushort[] ReadRegisters(SerialPort port, byte slaveAddress, ushort startAddress, ushort numRegisters)
@@ -68,7 +68,7 @@ namespace Modbus
         /// </summary>
         /// <param name="port">Serial port.</param>
         /// <param name="slaveAddress">Slave device address.</param>
-        /// <param name="startAddress">Start adress for writing.</param>
+        /// <param name="startAddress">Start address for writing.</param>
         /// <param name="registers">Values of registers.</param>
         public static void WriteRegisters(SerialPort port, byte slaveAddress, ushort startAddress, params ushort[] registers)
         {
