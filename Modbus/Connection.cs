@@ -4,30 +4,24 @@ namespace Modbus
 {
     public class Connection
     {
-        private SerialPort _port;
+        public SerialPort Port { get; set; }
 
         private bool PortIsOpen
         {
-            get { return _port != null && _port.IsOpen; }
-        }
-
-        public SerialPort Port
-        {
-            get { return _port; }
-            set { _port = value; }
+            get { return Port != null && Port.IsOpen; }
         }
 
         public void OpenPort()
         {
             ClosePort();
-            Modbus.OpenPort(_port);
+            Modbus.OpenPort(Port);
         }
 
         public void ClosePort()
         {
             if (PortIsOpen)
             {
-                Modbus.ClosePort(_port);
+                Modbus.ClosePort(Port);
             }
         }
     }

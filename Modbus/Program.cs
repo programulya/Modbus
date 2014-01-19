@@ -15,17 +15,17 @@ namespace Modbus
                     {
                         Port = new SerialPort
                             {
-                                PortName = ConfigurationSettings.AppSettings["PortName"],
-                                BaudRate = Convert.ToInt32(ConfigurationSettings.AppSettings["BaudRate"]),
-                                DataBits = Convert.ToInt32(ConfigurationSettings.AppSettings["DataBits"]),
-                                ReadTimeout = Convert.ToInt32(ConfigurationSettings.AppSettings["ReadTimeout"]),
-                                WriteTimeout = Convert.ToInt32(ConfigurationSettings.AppSettings["WriteTimeout"]),
+                                PortName = ConfigurationManager.AppSettings["PortName"],
+                                BaudRate = Convert.ToInt32(ConfigurationManager.AppSettings["BaudRate"]),
+                                DataBits = Convert.ToInt32(ConfigurationManager.AppSettings["DataBits"]),
+                                ReadTimeout = Convert.ToInt32(ConfigurationManager.AppSettings["ReadTimeout"]),
+                                WriteTimeout = Convert.ToInt32(ConfigurationManager.AppSettings["WriteTimeout"]),
                                 Parity = Parity.None,
                                 StopBits = StopBits.One
                             }
                     };
 
-                var slaveAddress = Convert.ToByte(ConfigurationSettings.AppSettings["SlaveAddress"]);
+                var slaveAddress = Convert.ToByte(ConfigurationManager.AppSettings["SlaveAddress"]);
 
                 try
                 {
